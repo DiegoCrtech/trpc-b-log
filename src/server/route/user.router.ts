@@ -38,7 +38,7 @@ export const userRouter = createRouter().mutation('register-user', {
 }).mutation(
   'request.otp', {
   input: requestOtpSchema,
-  async resolve (input , ctx) {
+  async resolve ({input , ctx}) {
     const { email, redirect } = input
 
     const user = await ctx.prisma.user.findUnique({
